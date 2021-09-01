@@ -11,15 +11,19 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button b1;
+    Button b1,b2,b3;
     WebView w1;
     EditText e1;
-    String roll;
+    String roll="191500082";
+    int rollInt=191500082;
+    String myurl;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         b1 = findViewById(R.id.submit);
+        b2 = findViewById(R.id.next);
+        b3 = findViewById(R.id.previous);
         e1 = findViewById(R.id.rollNo);
         w1 = findViewById(R.id.web);
         if(!DetectConnection.checkInternetConnection(MainActivity.this)){
@@ -36,13 +40,44 @@ public class MainActivity extends AppCompatActivity {
                     e1.setError("Enter Valid Roll No");
                 }
                 else {
-                    String myurl="https://glauniversity.in:8103/"+roll+".jpg";
+                    rollInt=Integer.parseInt(roll);
+                    myurl="https://glauniversity.in:8103/"+roll+".jpg";
                     if(!DetectConnection.checkInternetConnection(MainActivity.this)){
                         Toast.makeText(MainActivity.this, "Check Your Internet Connection", Toast.LENGTH_SHORT).show();
                     }
                     else {
                         w1.loadUrl(myurl);
                     }
+                }
+            }
+        });
+        b2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                rollInt = rollInt+1;
+                roll = String.valueOf(rollInt);
+                e1.setText(roll);
+                myurl="https://glauniversity.in:8103/"+roll+".jpg";
+                if(!DetectConnection.checkInternetConnection(MainActivity.this)){
+                    Toast.makeText(MainActivity.this, "Check Your Internet Connection", Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    w1.loadUrl(myurl);
+                }
+            }
+        });
+        b3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                rollInt = rollInt-1;
+                roll = String.valueOf(rollInt);
+                e1.setText(roll);
+                myurl="https://glauniversity.in:8103/"+roll+".jpg";
+                if(!DetectConnection.checkInternetConnection(MainActivity.this)){
+                    Toast.makeText(MainActivity.this, "Check Your Internet Connection", Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    w1.loadUrl(myurl);
                 }
             }
         });
