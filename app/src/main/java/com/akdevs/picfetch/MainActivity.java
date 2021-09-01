@@ -31,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
         }
         else {
             w1.loadUrl("https://glauniversity.in:8103/191500082.jpg");
+            Toast.makeText(MainActivity.this, "Developed By Akshay Kumar", Toast.LENGTH_LONG).show();
         }
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
