@@ -6,4 +6,4 @@ Release-APK
 https://github.com/akshaykumar-ak/G.L.A-University-Profile-Image-App-PicFetch/releases/download/v1.0-beta.1/PicFetch-release.apk
 
 Debug-APK
-https://github.com/akshaykumar-ak/G.L.A-University-Profile-Image-App-PicFetch/releases/download/v1.0-beta.1/PicFetch.apk
+https://github.com/akshaykumar-ak/G.L.A-University-Profile-Image-App-PicFetch/releases/download/v1.0-beta.1/PicFetch-debug.apk
